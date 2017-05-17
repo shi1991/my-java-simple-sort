@@ -67,3 +67,26 @@ public static int[] sort(int[] args) {
 1. while 对无序数组不断进行二分，直到二分间距小于1。
 2. for (int i = 0; i < mark; i++);  的结果是获取到书友该分组的值
 3. 第二个for和while 就是插入排序的代码
+
+## 冒泡排序
+
+### 思路  
+每循环一次，将该次循环中的最大值，放到该次排序的最后。  
+每次循环将前一个值与后一个值比较，前一个值大就交换。
+
+### Java代码实现
+```
+public static int[] sort(int[] args) {
+        int length = args.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = 1; j < length - i; j++) {
+                if (args[j] < args[j - 1]) {
+                    int temp = args[j];
+                    args[j] = args[j - 1];
+                    args[j - 1] = temp;
+                }
+            }
+        }
+        return args;
+    }
+```
